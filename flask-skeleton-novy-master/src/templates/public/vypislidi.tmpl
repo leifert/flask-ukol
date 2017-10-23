@@ -1,0 +1,42 @@
+{% extends "shared/layout.tmpl" %}
+
+{% block title %}Vypis lidi {% endblock %}
+
+{% block content %}
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+  <h3>Vypis lidi</h3>
+ <table>
+   <tr>
+        <th>Jmeno</th>
+        <th>Prijmeni</th>
+        <th>Vek</th>
+  </tr>
+    {% for n in pole %}
+        <tr><td>{{ n.Matej }}</td>
+        <td>{{ n.Leifert }}</td>
+        <td>{{ n.vek}}</td>
+        <td><a href="/smazLidi/{{ n.id }}">Smazat</a></td></tr>
+
+    {% endfor %}
+    </table>
+    <a href="/lidi">Pridat lidi</a>
+{% endblock %}
+
+
+
